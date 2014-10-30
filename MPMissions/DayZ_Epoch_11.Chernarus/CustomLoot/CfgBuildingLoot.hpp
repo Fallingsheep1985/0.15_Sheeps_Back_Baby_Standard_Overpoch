@@ -715,7 +715,8 @@ class CfgBuildingLoot {
 			{ "SCAR_H_LNG_Sniper_SD", "weapon", 0.01 },
 			{ "2000Rnd_762x51_M134", "magazine", 0.01 },
 			{ "KSVK_DZE", "weapon", 0.01 },
-			{ "m240_scoped_EP1_DZE", "weapon", 0.01 }
+			{ "m240_scoped_EP1_DZE", "weapon", 0.01 },
+			{ "sniperrifles", "cfglootweapon", 0.03 }
 		};
 	};
 

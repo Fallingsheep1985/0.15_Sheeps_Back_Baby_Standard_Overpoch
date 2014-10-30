@@ -175,6 +175,41 @@ class CfgLootSmall {
 		{"8Rnd_9x18_MakarovSD",0.01},
 		{"20Rnd_B_765x17_Ball",0.04},
 		{"30Rnd_9x19_UZI_SD",0.01}
+		,{"vil_32Rnd_uzi",0.2}
+		,{"vil_32Rnd_UZI_SD",0.2}
+		,{"RH_10Rnd_22LR_mk2",0.2}
+		,{"RH_12Rnd_45cal_usp",0.2}
+		,{"RH_13Rnd_9x19_bhp",0.2}
+		,{"RH_15Rnd_9x19_usp",0.2}
+		,{"RH_15Rnd_9x19_uspsd",0.2}
+		,{"RH_17Rnd_9x19_g17",0.2}
+		,{"RH_17Rnd_9x19_g17SD",0.2}
+		,{"RH_19Rnd_9x19_g18",0.2}
+		,{"RH_20Rnd_32cal_vz61",0.2}
+		,{"vil_usp45sd_mag",0.2}
+		,{"vil_usp45_mag",0.2}
+		,{"RH_20Rnd_9x19_M93",0.2}
+		,{"RH_30Rnd_9x19_tec",0.2}
+		,{"RH_32Rnd_9x19_Muzi",0.2}
+		,{"RH_6Rnd_357_Mag",0.2}
+		,{"RH_6Rnd_44_Mag",0.2}
+		,{"RH_7Rnd_32cal_ppk",0.2}
+		,{"RH_7Rnd_50_AE",0.2}
+		,{"RH_8Rnd_45cal_m1911",0.2}
+		,{"RH_8Rnd_762_tt33",0.2}
+		,{"RH_8Rnd_9x19_Mk",0.2}
+		,{"RH_8Rnd_9x19_Mksd",0.2}
+		,{"RH_8Rnd_9x19_P38",0.2}
+		,{"15Rnd_9x19_M9",0.2}
+		,{"15Rnd_9x19_M9SD",0.2}
+		,{"17Rnd_9x19_glock17",0.2}
+		,{"vil_bhp_mag",0.2}
+		,{"vil_20Rnd_762x51_G3",0.2}
+		,{"RH_20Rnd_762x51_hk417",0.2}
+		,{"RH_20Rnd_762x51_SD_hk417",0.2}
+		,{"20rnd_762x51_B_SCAR",0.2}
+		,{"FHQ_rem_30Rnd_680x43_ACR",0.2}
+		,{"FHQ_rem_30Rnd_680x43_ACR_SD",0.2}
 	};
 	policeman[] = {
 		{"ItemBandage",0.3},
@@ -254,23 +289,73 @@ class CfgLootSmall {
 		{"Skin_GUE_Soldier_2_DZ",0.04}
 	};
 	machinegunammoexpl[] = {
-		{"100Rnd_556x45_BetaCMag",0.20},
-		{"75Rnd_545x39_RPK",0.20},
-		{"100Rnd_556x45_M249",0.15},
-		{"100Rnd_762x51_M240",0.15},
-		{"100Rnd_762x54_PK",0.14},
-		{"200Rnd_556x45_M249",0.14},
-		{"MAAWS_HEAT",0.01},
-		{"PipeBomb",0.01}
+		{"100Rnd_556x45_BetaCMag",0.2}
+		,{"75Rnd_545x39_RPK",0.2}
+		,{"100Rnd_556x45_M249",0.15}
+		,{"100Rnd_762x51_M240",0.15}
+		,{"100Rnd_762x54_PK",0.14}
+		,{"200Rnd_556x45_M249",0.14}
+		,{"MAAWS_HEAT",0.01}
+		,{"PipeBomb",0.01}
+		,{"100Rnd_556x45",0.2}
+		,{"100Rnd_556x45_BetaCMag",0.2}
+		,{"200Rnd_556x45_M249",0.2}
+		,{"75Rnd_545x39_RPK",0.2}
 	};
 	pistols[] = {
-		{"Makarov",0.25},
-		{"Colt1911",0.23},
-		{"revolver_EP1",0.20},
-		{"glock17_EP1",0.10},
-		{"MakarovSD",0.10},
-		{"M9",0.07},
-		{"M9SD",0.04},
-		{"revolver_gold_EP1",0.01}
+		{"Makarov",0.25}
+		,{"Colt1911",0.23}
+		,{"revolver_EP1",0.2}
+		,{"glock17_EP1",0.1}
+		,{"MakarovSD",0.1}
+		,{"M9",0.07}
+		,{"M9SD",0.04}
+		,{"revolver_gold_EP1",0.01}
+		,{"RH_deagle",0.04}
+		,{"RH_Deagleg",0.04}
+		,{"RH_Deaglem",0.04}
+		,{"RH_Deaglemz",0.04}
+		,{"RH_Deaglemzb",0.04}
+		,{"RH_Deagles",0.04}
+		,{"RH_g17",0.04}
+		,{"RH_g17sd",0.04}
+		,{"RH_g18",0.04}
+		,{"RH_g19",0.04}
+		,{"RH_g19t",0.04}
+		,{"RH_browninghp",0.04}
+		,{"RH_bull",0.04}
+		,{"RH_anac",0.04}
+		,{"RH_anacg",0.04}
+		,{"RH_m1911",0.04}
+		,{"RH_m1911old",0.04}
+		,{"RH_m1911sd",0.04}
+		,{"RH_m9",0.04}
+		,{"RH_m93r",0.04}
+		,{"RH_m9c",0.04}
+		,{"RH_m9csd",0.04}
+		,{"RH_m9sd",0.04}
+		,{"RH_usp",0.04}
+		,{"RH_uspm",0.04}
+		,{"RH_uspsd",0.04}
+		,{"RH_mk2",0.04}
+		,{"RH_mk22",0.04}
+		,{"RH_mk22sd",0.04}
+		,{"RH_mk22v",0.04}
+		,{"RH_mk22vsd",0.04}
+		,{"RH_p226",0.04}
+		,{"RH_p226s",0.04}
+		,{"RH_p38",0.04}
+		,{"RH_ppk",0.04}
+		,{"RH_python",0.04}
+		,{"RH_tec9",0.04}
+		,{"RH_tt33",0.04}
+		,{"RH_vz61",0.04}
+		,{"vil_B_HP",0.04}
+		,{"vil_USP",0.04}
+		,{"vil_USP45",0.04}
+		,{"vil_USP45SD",0.04}
+		,{"vil_USPSD",0.04}
+		,{"vil_Glock",0.04}
+		,{"vil_Glock_o",0.04}
 	};
 };
