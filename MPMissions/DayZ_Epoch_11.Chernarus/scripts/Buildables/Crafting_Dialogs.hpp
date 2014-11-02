@@ -5,6 +5,7 @@ class Advanced_Crafting {
 	onUnload = "GlobalCraftingVariable=0;uiNamespace setVariable ['Advanced_CraftingV', nil]";
 	class Controls
 	{
+
 class AAC_Background: RscBackground
 {
 	idc = 1800;
@@ -122,7 +123,7 @@ class Craft_Button: RscButton
 	y = 0.84;
 	w = 0.125;
 	h = 0.04;
-	action = "execVM ""custom\Buildables\custom_builds.sqf""";
+	action = "execVM ""scripts\Buildables\custom_builds.sqf""";
 };
 class Preview_Button: RscButton
 {
@@ -132,7 +133,7 @@ class Preview_Button: RscButton
 	y = 0.84;
 	w = 0.1375;
 	h = 0.04;
-	action = "execVM ""custom\Buildables\preview_item.sqf""";	
+	action = "execVM ""scripts\Buildables\preview_item.sqf""";	
 };
 class Zoom_Minus_Button: RscButton
 {
