@@ -38,6 +38,9 @@ if (true) then
   _this setPos [4614.376, 2421.9856, 8.5830688e-006];
 };
 */
+
+
+
 _vehicle_920 = objNull;
 if (true) then
 {

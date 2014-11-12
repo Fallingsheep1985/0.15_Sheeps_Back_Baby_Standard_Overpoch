@@ -100,7 +100,26 @@ ELE_RequiredBuildTools = ["ItemToolbox", "ItemCrowbar"]; // required tools for b
 ELE_RequiredBuildItems = [["PartGeneric",4], "PartEngine", "ItemGenerator", "ItemJerrycan"]; // required items to build an elevator
 ELE_RequiredBuildStopItems = [["PartGeneric",4]]; // required items to build an elevator stop
 ELE_StopClass = "MetalFloor_Preview_DZ";
-EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"]];
+
+if(FMissionScript)then{
+EpochEvents = [
+["any","any","any","any",30,"crash_spawner"],
+["any","any","any","any",0,"crash_spawner"],
+["any","any","any","any",25,"crash_spawner"],
+["any","any","any","any",15,"supply_drop"],
+["any","any","any","any",50,"supply_drop"],
+["any","any","any","any",15,"FMission_Launcher1"],
+["any","any","any","any",35,"FMission_Launcher2"],
+["any","any","any","any",45,"FMission_Launcher3"]
+];
+}else{
+EpochEvents = [
+["any","any","any","any",30,"crash_spawner"],
+["any","any","any","any",0,"crash_spawner"],
+["any","any","any","any",25,"crash_spawner"],
+["any","any","any","any",15,"supply_drop"],
+["any","any","any","any",50,"supply_drop"]
+};
 //snow
 snowchance = 5; //5% chance to snow on server start/restart
 
@@ -193,10 +212,22 @@ if (!isDedicated) then {
 	if (JAEMScript) then {
 		_nil = [] execVM "scripts\JAEM\EvacChopper_init.sqf";
 	};
+	if(KillMessageScript)then{
+		execVM "scripts\CustomKillMessage\kill_msg.sqf";
+	};
 };
 
 #include "\z\addons\dayz_code\system\REsec.sqf"
 
+//Bus Route
+if (BusRouteScript)then{
+	if (isServer) then {
+		[true] execVM "busroute\init_bus.sqf";
+	};
+	if (!isDedicated) then {
+		[] execVM "busroute\player_axeBus.sqf";
+	};
+};
 //Start Dynamic Weather
 execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 
@@ -243,6 +274,19 @@ if(WaterMarkScript)then{
 	  };
 	};
 };
+if(logoWatermark)then{
+	_piclogo = "pictures\logo.paa";
+	[
+		'<img align=''left'' size=''1.0'' shadow=''0'' image='+(str(_piclogo))+' />',
+		safeZoneX+0.027,
+		safeZoneY+safeZoneH-0.1,
+		99999,
+		0,
+		0,
+		3090
+	] spawn bis_fnc_dynamicText;
+};
+
 if(FastropeScript)then{
 	_fast_roping = [] execVM "scripts\Fastrope\BTC_fast_roping_init.sqf";
 };
@@ -276,6 +320,13 @@ if (!isDedicated && (dayzPlayerLogin2 select 2)) then {
 	};
 };
 
+if(WepaonModScript)then{
+	call compile preprocessFileLineNumbers "scripts\wmod\init.sqf";
+};
+//Base jump
+if(BaseJumpScript)then{
+	call compile preprocessFileLineNumbers "scripts\baseJump\init.sqf";  
+};
 endLoadingScreen; // Work around for loadscreen freeze
 
 //Admin Tools
