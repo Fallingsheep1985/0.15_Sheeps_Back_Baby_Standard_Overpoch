@@ -496,10 +496,9 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		s_player_lockUnlock_crtl = -1;
 	};
 if(ArrestScript)then{
-_Build = canbuild;
 //--------------------------------------ARREST---------------------------------------------------------------- 
 		   if ((player getVariable"humanity") >= 5000 || (player getVariable"humanity") <= -5000 || (getPlayerUID player) in AdminList ) then {
-			if(_isMan && !_isZombie && _canDo && _isAlive && _Build) then {
+			if(_isMan && !_isZombie && _canDo && _isAlive && !( _traderType in serverTraders)) then {
 				if (s_player_arrest < 0) then {
 					s_player_arrest = player addaction ['<t color="#0074E8">' + "Investigation Menu" + '</t>', "Scripts\Investigation\investigation.sqf","",100,false,true,"", ""];
 					};
@@ -931,17 +930,15 @@ if(TentHealScript)then{
 };
 //////////////////////////////////////////////////TAKE CLOTHES START/////////////////////////////////////
 if (TakeClothesScript) then {
-        _clothesTaken = cursorTarget getVariable["clothesTaken",false];
-    // Take clothes by Zabn @ BalotaBuddies.net
-    if (_isMan && !_isAlive && !_isZombie && !_isAnimal && !_clothesTaken) then {
-        if (s_player_clothes < 0) then {
-            s_player_clothes = player addAction [("<t color='#0096ff'>")+("Take Clothes")+("</t>"), "scripts\takeskin\player_takeClothes.sqf",cursorTarget, -10, false, true, "",""];
-        };
-    } else {
-        
-        player removeAction s_player_clothes;
-		s_player_clothes = -1;
-    };
+//Remove CLOTHES
+if (_isMan and !_isAlive and !_isZombie and !_isAnimal) then {
+if (s_clothes < 0) then {
+s_clothes = player addAction [("" + ("Take Clothes") + ""), "scripts\takeskin\removeclothes.sqf",cursorTarget, 1, false, true, "",""];
+};
+} else {
+player removeAction s_clothes;
+s_clothes = -1;
+};
 };
 //////////////////////////////////////////////////TAKE CLOTHES END/////////////////////////////////////
 	//Repairing Vehicles
@@ -1207,6 +1204,9 @@ _bankrobbery = cursorTarget isKindOf "Notebook";
     s_player_search = -1;
 	player removeAction s_player_butcherZ;
 	s_player_butcherZ = -1;
+	//remove clothes
+	player removeAction s_clothes;
+	s_clothes = -1;
 };
 //Dog actions on player self
 _dogHandle = player getVariable ["dogID", 0];
@@ -1328,4 +1328,14 @@ if(ZombieBombScript)then{
 		zombieBomb = -1;
 	};
 };
+//Gambleing
 
+//Random number game
+	if (cursorTarget isKindOf "Hooker4") then {
+		if (s_player_gamble < 0) then {
+            s_player_gamble = player addAction [("<t color='#0096ff'>")+("Gamble")+("</t>"), "scripts\gambling\gamblemenu.sqf","",5,false,true,"",""];
+		};
+	}else {
+	    player removeAction s_player_gamble;
+		s_player_gamble = -1;
+	};

@@ -7,7 +7,8 @@ cutText ["","BLACK OUT"];
 enableSaving [false, false];
 //Load Configs
 [] execVM "scriptcontrol.sqf";
-
+//Load Markers
+[] execVM "scripts\custommarkers.sqf";
 //REALLY IMPORTANT VALUES
 dayZ_instance =	11;					//The instance
 dayzHiveRequest = [];
@@ -223,10 +224,17 @@ if (!isDedicated) then {
 //Bus Route
 if (BusRouteScript)then{
 	if (isServer) then {
+<<<<<<< HEAD
+		[true] execVM "scripts\busroute\init_bus.sqf";
+	};
+	if (!isDedicated) then {
+		[] execVM "scripts\busroute\player_axeBus.sqf";
+=======
 		[true] execVM "busroute\init_bus.sqf";
 	};
 	if (!isDedicated) then {
 		[] execVM "busroute\player_axeBus.sqf";
+>>>>>>> origin/master
 	};
 };
 //Start Dynamic Weather
