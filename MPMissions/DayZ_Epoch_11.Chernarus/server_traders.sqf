@@ -116,7 +116,7 @@ menu_RU_Villager3 = [
 ];
 // Weapons neutral 2
 menu_TK_CIV_Takistani04_EP1 = [
-	[["Assault Rifle",637],["Light Machine Gun",638],["Pistols",674],["Shotguns and Single-shot",641],["Sniper Rifle",640],["Submachine Guns",642],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1017],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009,["Overwatch Pistols",1010],["Overwatch Scar",1011]],
+	[["Assault Rifle",637],["Light Machine Gun",638],["Pistols",674],["Shotguns and Single-shot",641],["Sniper Rifle",640],["Submachine Guns",642],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1017],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011]],
 	[],
 	"neutral"
 ];
