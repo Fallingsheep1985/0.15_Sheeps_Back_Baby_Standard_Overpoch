@@ -2,6 +2,9 @@
 	For DayZ Epoch
 	Addons Credits: Jetski Yanahui by Kol9yN, Zakat, Gerasimow9, YuraPetrov, zGuba, A.Karagod, IceBreakr, Sahbazz
 */
+//Recruit Survivors
+DBGroupsStarted = false;
+DBMaxSurvivors = 50; // change this to the number of survivors you want, the more you add the lower your server and client FPS
 startLoadingScreen ["","RscDisplayLoadCustom"];
 cutText ["","BLACK OUT"];
 enableSaving [false, false];
@@ -103,24 +106,24 @@ ELE_RequiredBuildStopItems = [["PartGeneric",4]]; // required items to build an 
 ELE_StopClass = "MetalFloor_Preview_DZ";
 
 if(FMissionScript)then{
-EpochEvents = [
-["any","any","any","any",30,"crash_spawner"],
-["any","any","any","any",0,"crash_spawner"],
-["any","any","any","any",25,"crash_spawner"],
-["any","any","any","any",15,"supply_drop"],
-["any","any","any","any",50,"supply_drop"],
-["any","any","any","any",15,"FMission_Launcher1"],
-["any","any","any","any",35,"FMission_Launcher2"],
-["any","any","any","any",45,"FMission_Launcher3"]
-];
+	EpochEvents = [
+	["any","any","any","any",30,"crash_spawner"],
+	["any","any","any","any",0,"crash_spawner"],
+	["any","any","any","any",25,"crash_spawner"],
+	["any","any","any","any",15,"supply_drop"],
+	["any","any","any","any",50,"supply_drop"],
+	["any","any","any","any",15,"FMission_Launcher1"],
+	["any","any","any","any",35,"FMission_Launcher2"],
+	["any","any","any","any",45,"FMission_Launcher3"]
+	];
 }else{
-EpochEvents = [
-["any","any","any","any",30,"crash_spawner"],
-["any","any","any","any",0,"crash_spawner"],
-["any","any","any","any",25,"crash_spawner"],
-["any","any","any","any",15,"supply_drop"],
-["any","any","any","any",50,"supply_drop"]
-];
+	EpochEvents = [
+	["any","any","any","any",30,"crash_spawner"],
+	["any","any","any","any",0,"crash_spawner"],
+	["any","any","any","any",25,"crash_spawner"],
+	["any","any","any","any",15,"supply_drop"],
+	["any","any","any","any",50,"supply_drop"]
+	];
 };
 //snow
 snowchance = 5; //5% chance to snow on server start/restart
@@ -224,17 +227,10 @@ if (!isDedicated) then {
 //Bus Route
 if (BusRouteScript)then{
 	if (isServer) then {
-<<<<<<< HEAD
 		[true] execVM "scripts\busroute\init_bus.sqf";
 	};
 	if (!isDedicated) then {
 		[] execVM "scripts\busroute\player_axeBus.sqf";
-=======
-		[true] execVM "busroute\init_bus.sqf";
-	};
-	if (!isDedicated) then {
-		[] execVM "busroute\player_axeBus.sqf";
->>>>>>> origin/master
 	};
 };
 //Start Dynamic Weather
@@ -295,6 +291,24 @@ if(logoWatermark)then{
 		3090
 	] spawn bis_fnc_dynamicText;
 };
+if(RecruitSurvivorsScript)then{
+	if (isServer) then {
+		DBPV_SrvrUnits = [];
+		publicVariable "DBPV_SrvrUnits";
+		DBCurSurvivors = 0;
+		publicVariable "DBCurSurvivors";
+		DBSGroups = false;
+		publicVariable "DBSGroups";
+		DBUpdClient = false;
+		publicVariable "DBUpdClient";
+		};
+	[] execVM "scripts\dbgroups\init.sqf";
+if (!isDedicated) then {
+	[] execVM "scripts\dbgroups\scripts\scp_srvractions.sqf";
+	[] execVM "scripts\dbgroups\scripts\scp_adjustrating.sqf";
+	DBUpdClient = true; // update survivor variables
+	publicVariable "DBUpdClient";
+};	
 
 if(FastropeScript)then{
 	_fast_roping = [] execVM "scripts\Fastrope\BTC_fast_roping_init.sqf";
@@ -329,7 +343,7 @@ if (!isDedicated && (dayzPlayerLogin2 select 2)) then {
 	};
 };
 
-if(WepaonModScript)then{
+if(WeaponModScript)then{
 	call compile preprocessFileLineNumbers "scripts\wmod\init.sqf";
 };
 //Base jump

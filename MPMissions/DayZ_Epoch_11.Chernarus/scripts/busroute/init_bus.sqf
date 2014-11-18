@@ -1,10 +1,6 @@
 	private ["_axeBusUnit","_firstRun","_dir","_axWPZ","_unitpos","_rndLOut","_ailoadout","_aiwep","_aiammo","_axeBus","_axeBusGroup","_axeBuspawnpos","_axeBusWPradius","_axeBusWPIndex","_axeBusFirstWayPoint","_axeBusWP","_axeBusRouteWaypoints","_axeBusDriver","_axeBusLogicGroup","_axeBusLogicCenter"];
 	_axeBusUnit = objNull;
-<<<<<<< HEAD
 	_axeBusGroup = createGroup west;
-=======
-	_axeBusGroup = createGroup RESISTANCE;
->>>>>>> origin/master
 	_axeBuspawnpos = [13128.2,10381.9,0];
 	_unitpos = [13125.2,10416,0];
 	_axeBusWPradius = 2;//waypoint radius
@@ -83,6 +79,8 @@
 		_axeBusUnit enableAI "MOVE";
 		_axeBusUnit enableAI "ANIM";
 		_axeBusUnit enableAI "FSM";
+		//stop AI attacking bus
+		_axeBusUnit setCaptive true;
 		_axeBusUnit allowDammage true;
 
 		_axeBusUnit setCombatMode "GREEN";
@@ -118,7 +116,7 @@
 		_axeBusGroup selectLeader _axeBusUnit;
 		_axeBusDriver = _axeBusUnit;
 		_axeBusDriver addEventHandler ["HandleDamage", {false}];
-		_axeBus addEventHandler ["killed", {[false] execVM "busroute\init_bus.sqf"}];//Shouldn't be required
+		_axeBus addEventHandler ["killed", {[false] execVM "scripts\busroute\init_bus.sqf"}];//Shouldn't be required
 		
 		//Test - Allow dev time to get in bus
 		sleep 36;
@@ -151,6 +149,17 @@
 		//diag_log format ["AXLOG:BUS: Driver Required:%1",driver _axeBus];
 		units _axeBusGroup select 0 assignAsDriver _axeBus;
 		units _axeBusGroup select 0 moveInDriver _axeBus;
+		};
+		if(BUSmarkerScript)then{
+		//Create marker for bus
+		deleteMarker "BUSMarker";
+		_BUSMarker = createmarker ["BUSMarker", position _axeBus];
+		_BUSMarker setMarkerText "Bus";
+		_BUSMarker setMarkerType "DOT";
+		_BUSMarker setMarkerColor "ColorRed";
+		_BUSMarker setMarkerBrush "Solid";
+		_BUSMarker setMarkerSize [1, 1];
+		BUSMarker = _BUSMarker;
 		};
 
 	sleep 3;

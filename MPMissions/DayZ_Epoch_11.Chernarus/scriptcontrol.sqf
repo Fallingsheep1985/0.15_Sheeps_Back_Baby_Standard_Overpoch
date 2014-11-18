@@ -7,18 +7,22 @@ server_name = "0.15"; //Watermark Text
 
 //Server Logo TURN OF WATER MARK BEFORE USE!!!
 logoWatermark = true;
+//Recruit Survivors
+RecruitSurvivorsScript = true;
 //Roaming Zombie Hordes
 HordeScript = true;
 //Base jump
 BaseJumpScript = true;
 //AI BUS Route
 BusRouteScript = true;
+//Show marker for AI bus on map
+BUSmarkerScript = true;
 //FMissions
 FMissionScript = true;
 //Custom Kill Message's
 KillMessageScript = true;
 //Weapon Mods
-WepaonModScript = true;
+WeaponModScript = true;
 //EVR Blowout
 EVRScript = true;
 //Lights
@@ -121,7 +125,6 @@ to turn the map markers on change false to true
 
 */
 if (isServer) then {
-<<<<<<< HEAD
 //Project X - Geekin aka Chainsaw Squirrel
 execVM "\z\addons\dayz_server\CustomBuildings\projectX\roadtoprojectX.sqf";
 execVM "\z\addons\dayz_server\CustomBuildings\projectX\bridgetoprojectX.sqf";
@@ -144,65 +147,11 @@ altarmilitarybaseMarker = true;
 //beached aircraft carrier
 execVM  "\z\addons\dayz_server\CustomBuildings\aircraftcarrier.sqf";
 beachedcarrierMarker = true;
-=======
-//Water base - Geekin aka Chainsaw Squirrel
-//execVM "\z\addons\dayz_server\CustomBuildings\waterbase.sqf";
-
-//Sector FNG inland
-//execVM "\z\addons\dayz_server\CustomBuildings\sectorfng\sectorfng_init.sqf";
-sectorfngMarker = false;
-
-//CDC Balota (no trader)                        
-//execVM  "\z\addons\dayz_server\CustomBuildings\CDC_Balota.sqf";
-CDCMarker = false;
-
-//Altar
-//execVM  "\z\addons\dayz_server\CustomBuildings\altar.sqf";
-altarmilitarybaseMarker = false;
-
-//beached aircraft carrier
-//execVM  "\z\addons\dayz_server\CustomBuildings\aircraftcarrier.sqf";
-beachedcarrierMarker = false;
-
-//Black Lake Castle
-//execVM  "\z\addons\dayz_server\CustomBuildings\blacklakecastle.sqf";
-blacklakecastlerMarker = false;
-
-//Kameka mine                                
-//execVM  "\z\addons\dayz_server\CustomBuildings\mine_grotte.sqf";//removed ore and added to separate spawn
-//execVM  "\z\addons\dayz_server\CustomBuildings\mine_grotte_ore.sqf";//ore
-//execVM  "\z\addons\dayz_server\CustomBuildings\box_la_grotte.sqf";//Loot box
-kamenkamineMarker = false;
-
-//Black forest outpost
-//execVM  "\z\addons\dayz_server\CustomBuildings\blackforestoutpost.sqf";
-blackforestoutpostMarker = false;
-
-//Golden River MIne
-//execVM  "\z\addons\dayz_server\CustomBuildings\golden_river_mine.sqf";
-golden_river_mineMarker  = false;
-//IXXO
-//execVM "\z\addons\dayz_server\CustomBuildings\balota.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\kamenka.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\Krasno.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\northeast.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\vybor.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\basebor.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\basedichina.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\basenovy.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\Zeleno.sqf";
-                                             
-//Caves                                      
-//execVM  "\z\addons\dayz_server\CustomBuildings\Prud_Cave.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\North_Cave.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\South_Cave.sqf";                                                                                     
->>>>>>> origin/master
 
 //Black Lake Castle
 execVM  "\z\addons\dayz_server\CustomBuildings\blacklakecastle.sqf";
 blacklakecastlerMarker = true;
 
-<<<<<<< HEAD
 //Kameka mine                                
 execVM  "\z\addons\dayz_server\CustomBuildings\mine_grotte.sqf";//removed ore and added to separate spawn
 execVM  "\z\addons\dayz_server\CustomBuildings\mine_grotte_ore.sqf";//ore
@@ -234,14 +183,6 @@ execVM  "\z\addons\dayz_server\CustomBuildings\South_Cave.sqf";
 
 //cherno heliport
 execVM  "\z\addons\dayz_server\CustomBuildings\heliport.sqf";
-=======
-//East coast cherno - edits by Geekin aka Chainsaw Squirrel to improve FPS
-//execVM  "\z\addons\dayz_server\CustomBuildings\Eastcoast.sqf";
-//execVM  "\z\addons\dayz_server\CustomBuildings\Eastcoast2.sqf";
-
-//Kabino Check Point
-//execVM  "\z\addons\dayz_server\CustomBuildings\kabinocheckpoint.sqf";
->>>>>>> origin/master
 
 //East coast cherno - edits by Geekin aka Chainsaw Squirrel to improve FPS
 execVM  "\z\addons\dayz_server\CustomBuildings\Eastcoast.sqf";
@@ -250,12 +191,9 @@ execVM  "\z\addons\dayz_server\CustomBuildings\Eastcoast2.sqf";
 //Kabino Check Point
 execVM  "\z\addons\dayz_server\CustomBuildings\kabinocheckpoint.sqf";
 
-<<<<<<< HEAD
 //Otmel Base
 execVM  "\z\addons\dayz_server\CustomBuildings\otmel.sqf";
 
-=======
->>>>>>> origin/master
 //Electro
 execVM  "\z\addons\dayz_server\CustomBuildings\electro.sqf";
 execVM  "\z\addons\dayz_server\CustomBuildings\electroZI.sqf";
