@@ -302,12 +302,13 @@ if(RecruitSurvivorsScript)then{
 		DBUpdClient = false;
 		publicVariable "DBUpdClient";
 		};
-	[] execVM "scripts\dbgroups\init.sqf";
-if (!isDedicated) then {
-	[] execVM "scripts\dbgroups\scripts\scp_srvractions.sqf";
-	[] execVM "scripts\dbgroups\scripts\scp_adjustrating.sqf";
-	DBUpdClient = true; // update survivor variables
-	publicVariable "DBUpdClient";
+		[] execVM "scripts\dbgroups\init.sqf";
+	if (!isDedicated) then {
+		[] execVM "scripts\dbgroups\scripts\scp_srvractions.sqf";
+		[] execVM "scripts\dbgroups\scripts\scp_adjustrating.sqf";
+		DBUpdClient = true; // update survivor variables
+		publicVariable "DBUpdClient";
+	};
 };	
 
 if(FastropeScript)then{
