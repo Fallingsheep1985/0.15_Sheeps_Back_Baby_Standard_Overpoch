@@ -301,7 +301,7 @@ if(RecruitSurvivorsScript)then{
 		publicVariable "DBSGroups";
 		DBUpdClient = false;
 		publicVariable "DBUpdClient";
-		};
+	};
 		[] execVM "scripts\dbgroups\init.sqf";
 	if (!isDedicated) then {
 		[] execVM "scripts\dbgroups\scripts\scp_srvractions.sqf";
@@ -351,7 +351,6 @@ if(WeaponModScript)then{
 if(BaseJumpScript)then{
 	call compile preprocessFileLineNumbers "scripts\baseJump\init.sqf";  
 };
-endLoadingScreen; // Work around for loadscreen freeze
 
 //Admin Tools
 if(AdmintoolsScript)then{
