@@ -1,0 +1,13 @@
+
+COPY ALL FILES FOLDERS FROM STANDARD BUILD
+DO NOT OVER WRITE THE FOLLOWING FILES / FOLDERS
+
+
+MPMissions
+fixes\variables.sqf
+server_traders.sqf
+CustomLoot
+CfgServerTrader
+
+dayz_server
+missions
