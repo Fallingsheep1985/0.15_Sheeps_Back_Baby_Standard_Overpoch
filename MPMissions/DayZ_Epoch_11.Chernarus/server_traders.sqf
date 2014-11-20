@@ -2,7 +2,7 @@
 serverTraders = ["Hooker1","Hooker2","RU_Functionary1","RU_Citizen3","Rocker4","Profiteer4","Rita_Ensler_EP1","CIV_EuroMan01_EP1","CIV_EuroMan02_EP1","TK_GUE_Soldier_5_EP1","GUE_Soldier_MG","Worker2","Worker3","Woodlander1","UN_CDF_Soldier_Pilot_EP1","RU_WorkWoman1","Dr_Annie_Baker_EP1","RU_Citizen4","RU_WorkWoman5","RU_Citizen1","RU_Villager3","TK_CIV_Takistani04_EP1","Pilot_EP1","RU_Profiteer4","Woodlander3","Dr_Hladik_EP1","Doctor","HouseWife1","GUE_Woodlander2"];
 // Hero Vendor
 menu_RU_Functionary1 = [
-	[["Ammunition",478],["Clothes",476],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477],["Overwatch Cop Cars",1012],["Overwatch Civilan Cars",1013],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1017],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011],["New Clothing",7000]],
+	[["Ammunition",478],["Clothes",476],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477],["Overwatch Cop Cars",1012],["Overwatch Civilan Cars",1013],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1005],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011],["New Clothing",7000]],
 	[],
 	"hero"
 ];
@@ -14,7 +14,7 @@ menu_RU_Citizen3 = [
 ];
 // Weapons Friendly
 menu_Rocker4 = [
-	[["Assault Rifle",485],["Light Machine Gun",486],["Pistols",489],["Shotguns and Single-shot",574],["Sniper Rifle",487],["Submachine Guns",488],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1017],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011]],
+	[["Assault Rifle",485],["Light Machine Gun",486],["Pistols",489],["Shotguns and Single-shot",574],["Sniper Rifle",487],["Submachine Guns",488],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1005],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011]],
 	[],
 	"friendly"
 ];
@@ -32,7 +32,7 @@ menu_Rita_Ensler_EP1 = [
 ];
 // Weapons neutral
 menu_CIV_EuroMan01_EP1 = [
-	[["Assault Rifle",602],["Light Machine Gun",603],["Pistols",606],["Shotguns and Single-shot",607],["Sniper Rifle",605],["Submachine Guns",604],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1017],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011]],
+	[["Assault Rifle",602],["Light Machine Gun",603],["Pistols",606],["Shotguns and Single-shot",607],["Sniper Rifle",605],["Submachine Guns",604],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1005],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011]],
 	[],
 	"neutral"
 ];
@@ -50,7 +50,7 @@ menu_TK_GUE_Soldier_5_EP1 = [
 ];
 // Bandit Trader
 menu_GUE_Soldier_MG = [
-	[["Ammunition",577],["Clothing",575],["Helicopter Armed",512],["Military Armed",569],["Trucks Armed",534],["Weapons",627],["Overwatch Cop Cars",1012],["Overwatch Civilan Cars",1013],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1017],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011],["New Clothing",7000]],
+	[["Ammunition",577],["Clothing",575],["Helicopter Armed",512],["Military Armed",569],["Trucks Armed",534],["Weapons",627],["Overwatch Cop Cars",1012],["Overwatch Civilan Cars",1013],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1005],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011],["New Clothing",7000]],
 	[],
 	"hostile"
 ];
@@ -116,7 +116,7 @@ menu_RU_Villager3 = [
 ];
 // Weapons neutral 2
 menu_TK_CIV_Takistani04_EP1 = [
-	[["Assault Rifle",637],["Light Machine Gun",638],["Pistols",674],["Shotguns and Single-shot",641],["Sniper Rifle",640],["Submachine Guns",642],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1017],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011]],
+	[["Assault Rifle",637],["Light Machine Gun",638],["Pistols",674],["Shotguns and Single-shot",641],["Sniper Rifle",640],["Submachine Guns",642],["Overwatch Sniper Rifles",1001],["Overwatch HK416",1004],["Overwatch HK417",1002],["Overwatch ACR",1005],["Overwatch AK",1003],["Overwatch G3",1007],["Overwatch LMG",1008],["Overwatch Masada",1009],["Overwatch Pistols",1010],["Overwatch Scar",1011]],
 	[],
 	"neutral"
 ];
