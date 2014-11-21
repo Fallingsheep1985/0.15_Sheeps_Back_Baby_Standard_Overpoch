@@ -12,7 +12,7 @@ AllPlayers set 	[count AllPlayers,
 					"Soldier1_DZ",
 					"Rocket_DZ"
 				];
-
+				
 MeleeWeapons = ["MeleeFishingPole","MeleeCrowbar","MeleeBaseBallBatNails","MeleeBaseBallBatBarbed","MeleeBaseBallBat","Crossbow_DZ","MeleeSledge","MeleeMachete","MeleeHatchet_DZE"];
 gear_done = false;
 //Cooking

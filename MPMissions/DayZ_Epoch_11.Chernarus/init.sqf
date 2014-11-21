@@ -362,15 +362,7 @@ if(BaseJumpScript)then{
 If(ZombieFreeBaseScript)then{
 	[] execVM "scripts\safebases\base_SafeArea.sqf";
 };
-
 //Admin Tools
 if(AdmintoolsScript)then{
 	[] execVM "admintools\Activate.sqf";
 };
-//Admin skin
-{
-	_adminated = _x getVariable ["adminated",0];
-	if( !isNil "_adminated" &&  _adminated != 0)then{
-	_x setObjectTexture [0, "pictures\admin.jpg"];
-	};
-}forEach playableUnits; // if your antihack doesnt allow this use nearestObjects[player, ["Survivor2_DZ"],25000];
