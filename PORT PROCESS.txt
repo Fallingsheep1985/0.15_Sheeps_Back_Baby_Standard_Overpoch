@@ -4,7 +4,6 @@ DO NOT OVER WRITE THE FOLLOWING FILES / FOLDERS
 
 
 MPMissions
-fixes\variables.sqf
 server_traders.sqf
 CustomLoot
 CfgServerTrader
