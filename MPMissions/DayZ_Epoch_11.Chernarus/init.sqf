@@ -2,6 +2,9 @@
 	For DayZ Epoch
 	Addons Credits: Jetski Yanahui by Kol9yN, Zakat, Gerasimow9, YuraPetrov, zGuba, A.Karagod, IceBreakr, Sahbazz
 */
+//Fmission
+FMissionScript = true;
+
 //Recruit Survivors
 DBGroupsStarted = false;
 DBMaxSurvivors = 5; // change this to the number of survivors you want, the more you add the lower your server and client FPS
@@ -9,7 +12,7 @@ startLoadingScreen ["","RscDisplayLoadCustom"];
 cutText ["","BLACK OUT"];
 enableSaving [false, false];
 //Load Configs
-[] execVM "scriptcontrol.sqf";
+call compile preprocessFileLineNumbers "scriptcontrol.sqf";
 //Load Markers
 [] execVM "scripts\custommarkers.sqf";
 //REALLY IMPORTANT VALUES
@@ -40,7 +43,7 @@ dayz_fullMoonNights = true;
 
 dayz_spawnselection = 0;
 dayz_paraSpawn = false;
-
+dayz_poleSafeArea = 50; //zombie free plot poles
 dayz_minpos = -1; 
 dayz_maxpos = 16000;
 
