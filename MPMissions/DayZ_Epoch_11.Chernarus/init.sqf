@@ -116,7 +116,6 @@ if(FMissionScript)then{
 	["any","any","any","any",15,"supply_drop"],
 	["any","any","any","any",50,"supply_drop"],
 	["any","any","any","any",15,"FMission_Launcher1"],
-	["any","any","any","any",35,"FMission_Launcher2"],
 	["any","any","any","any",45,"FMission_Launcher3"],
 	["any","any","any","any",10,"Military"], 
 	["any","any","any","any",25,"Treasure"], 
@@ -233,7 +232,7 @@ if (!isDedicated) then {
 	};
 };
 
-#include "\z\addons\dayz_code\system\REsec.sqf"
+#include "\z\addons\dayz_code\system\REsec.sqf";
 
 //Bus Route
 if (BusRouteScript)then{
@@ -261,7 +260,9 @@ if(GroundFogScript)then{
 	execVM "scripts\Weather\ground_fog.sqf"; //FPS HIT
 };
 
-#include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
+#include "\z\addons\dayz_code\system\BIS_Effects\init.sqf";
+
+endLoadingScreen; // Work around for loadscreen freeze
 //EVR Blow out
 if(EVRScript)then{
 if (isServer) then { _bul = [ns_blow_emp] execVM "scripts\blowout\module\blowout_server.sqf"; };
@@ -376,3 +377,4 @@ if(AdmintoolsScript)then{
 	_x setObjectTexture [0, "pictures\admin.jpg"];
 	};
 }forEach playableUnits; // if your antihack doesnt allow this use nearestObjects[player, ["Survivor2_DZ"],25000];
+endLoadingScreen; // Work around for loadscreen freeze
