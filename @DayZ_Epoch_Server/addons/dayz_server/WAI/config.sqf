@@ -101,14 +101,14 @@ if(isServer) then {
 		wai_players_online			= 1; 								// number of players online before mission starts
 		wai_server_fps				= 5; 								// missions only starts if server FPS is over wai_server_fps
 		
-		wai_kill_percent			= 30;								// percentage of AI players that must be killed at "crate" missions to be able to trigger completion
+		wai_kill_percent			= 70;								// percentage of AI players that must be killed at "crate" missions to be able to trigger completion
 
 		wai_high_value				= true;								// enable the possibility of finding a high value item (defined below crate_items_high_value) inside a crate
-		wai_high_value_chance		= 1;								// chance in percent you find above mentioned item
+		wai_high_value_chance		= 5;								// chance in percent you find above mentioned item
 
 		wai_enable_minefield		= true;								// enable minefields to better defend missions
-		wai_use_launchers			= false;							// add a rocket launcher to each spawned AI group
-		wai_remove_launcher			= false;							// remove rocket launcher from AI on death
+		wai_use_launchers			= true;							// add a rocket launcher to each spawned AI group
+		wai_remove_launcher			= true;							// remove rocket launcher from AI on death
 
 		// Missions
 		wai_radio_announce			= false;							// Setting this to true will announce the missions to those that hold a Radio only
