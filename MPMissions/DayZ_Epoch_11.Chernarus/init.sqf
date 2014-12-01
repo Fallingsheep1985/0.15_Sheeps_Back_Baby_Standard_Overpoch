@@ -220,7 +220,7 @@ if (!isDedicated) then {
 	};
 };
 
-#include "\z\addons\dayz_code\system\REsec.sqf";
+//#include "\z\addons\dayz_code\system\REsec.sqf";
 
 //Bus Route
 if (BusRouteScript)then{
