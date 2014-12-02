@@ -1,8 +1,6 @@
 
 BUGS
-skin trader - fix skins
 WAI - overwatch weapons to arrays
-
 
 
 ENHANCEMENTS (may not make it in final release!)
