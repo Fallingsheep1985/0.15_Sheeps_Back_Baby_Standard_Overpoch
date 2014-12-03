@@ -220,3 +220,8 @@ execVM  "\z\addons\dayz_server\CustomBuildings\Cherno.sqf";
 //execVM "\z\addons\dayz_server\CustomBuildings\sectorfng\sectorfng_init.sqf";
 sectorfngMarker = false;
 };
+
+// DO NOT CHANGE THIS!!
+//Repack version 
+REPACKMOD = "Overpoch"; 
+BUILDNUMBER = "100";
