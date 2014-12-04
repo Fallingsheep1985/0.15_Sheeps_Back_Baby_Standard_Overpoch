@@ -1,3 +1,17 @@
+
+class MyRscFrame
+{
+	type = 0;
+	idc = -1;
+	style = 64;
+	shadow = 2;
+	colorBackground[] = {0,0,0,1};
+	colorText[] = {1,1,1,1};
+	font = "Zeppelin32";
+	sizeEx = 0.02;
+	text = "";
+};
+
 class RscDisplaySlots
 {
    idd = SLOTS_DIALOG;
@@ -5,9 +19,21 @@ class RscDisplaySlots
 
    class Controls
    {
-     class RscFrame_1800: RscFrame
+	 class RscBackground_5000: RscBackground
+     {
+       idc = 5000;
+	   colorBackground[] = {0,0,0,1};
+	   colorText[] = {1,1,1,1};
+       x = 0.32375 * safezoneW + safezoneX;
+       y = 0.3355 * safezoneH + safezoneY;
+       w = 0.367188 * safezoneW;
+       h = 0.3055 * safezoneH;
+     };
+     class RscFrame_1800: MyRscFrame
      {
        idc = 1800;
+	   colorBackground[] = {0,0,0,1};
+	   colorText[] = {1,1,1,1};
        x = 0.32375 * safezoneW + safezoneX;
        y = 0.3355 * safezoneH + safezoneY;
        w = 0.367188 * safezoneW;
@@ -96,7 +122,7 @@ class RscDisplaySlots
        y = 0.5705 * safezoneH + safezoneY;
        w = 0.05875 * safezoneW;
        h = 0.0235 * safezoneH;
-       action = "closeDialog 0;";
+       action = "closeDialog 0;_nil=[]Spawn fnc_cash_out";
      };
    };
 };

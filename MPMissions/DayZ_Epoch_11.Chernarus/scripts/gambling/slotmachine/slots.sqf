@@ -1,251 +1,253 @@
 
 //Variables
-_credits = 0;
-_reelArray = ["cherry","lemon","grape","watermelon","orange","bar","seven","diamond"];
-//prizes for payout
-_prize1 = "ItemGoldBar";
-_prize2 = "ItemGoldBar10oz";
-_prize3 = "ItemBriefcase20oz";
-_prize4 = "ItemBriefcase40oz";
-_prize5 = "ItemBriefcase60oz";
-_prize6 = "ItemBriefcase80oz";
-_prize7 = "ItemBriefcase100oz";
+SlotsPlayerCredits = 0;
+IsSpinning = false;
+reelArray = ["cherry","lemon","grape","watermelon","orange","bar","seven","diamond"];
+slotspictures = ["pictures\image1.paa","pictures\image2.paa","pictures\image3.paa","pictures\image4.paa","pictures\image5.paa","pictures\image6.paa","pictures\image7.paa","pictures\image8.paa"];
+
+hasSlotsCredits = false;
 
 fnc_add_1_credits = {
-   //check if player has required item
-   if ("ItemGoldBar" in magazines player) then{
-     //remove cost
-     player removeMagazine "ItemGoldBar";
-     //add credit
-     _credits = _credits + 1;
-     //Update credits display
-     ctrlSetText[1000, format ["%1" ,_credits]];
-   }else{
-     titleText ["You need 1x Goldbar to add 1 credit!","PLAIN DOWN"];
-     titleFadeOut 3;
+if(IsSpinning)then{
+		titleText ["Please wait for current spin!","PLAIN DOWN"]; titleFadeOut 3;
+	 } else {
+	   //check if player has required item
+	   if ("ItemGoldBar" in magazines player) then{
+		 //remove cost
+		 player removeMagazine "ItemGoldBar";
+		 //add credit
+		 SlotsPlayerCredits = SlotsPlayerCredits + 1;
+		 //Update credits display
+		 ctrlSetText[1001, format ["%1" ,SlotsPlayerCredits]];
+	   }else{
+		 titleText ["You need 1x Goldbar to add 1 credit!","PLAIN DOWN"];
+		 titleFadeOut 3;
+	   };
    };
 };
 
 fnc_add_10_credits = {
-   //check if player has required item
-   if ("ItemGoldBar10oz" in magazines player) then{
-     //remove cost
-     player removeMagazine "ItemGoldBar10oz";
-     //add credits
-     _credits = _credits + 10;
-     //Update credits display
-     ctrlSetText[1000, format ["%1" ,_credits]];
-   }else{
-     titleText ["You need 1x 10oz Goldbar to add 10 credits!","PLAIN DOWN"]; titleFadeOut 3;
-   };
-};
-fnc_check_credits = {
-   if (_credits <= 0) then {
-     hasCredits = false;
-     titleText ["You have no credits!","PLAIN DOWN"]; titleFadeOut 3;
-   }else{
-     hasCredits = true;
+if(IsSpinning)then{
+		titleText ["Please wait for current spin!","PLAIN DOWN"]; titleFadeOut 3;
+	 } else {
+	   //check if player has required item
+	   if ("ItemGoldBar10oz" in magazines player) then{
+		 //remove cost
+		 player removeMagazine "ItemGoldBar10oz";
+		 //add credits
+		 SlotsPlayerCredits = SlotsPlayerCredits + 10;
+		 //Update credits display
+		 ctrlSetText[1001, format ["%1" ,SlotsPlayerCredits]];
+	   }else{
+		 titleText ["You need 1x 10oz Goldbar to add 10 credits!","PLAIN DOWN"]; titleFadeOut 3;
+	   };
    };
 };
 
 fnc_random_pictures = {
-	call fnc_random_reel1;
-	call fnc_random_reel2;
-	call fnc_random_reel3;
-};
-
-fnc_random_reel1 = {
-// "cherry","lemon","grape","watermelon","orange","bar","seven","diamond"
-//reel1
- ctrlSetText [1200, "pictures\image1.paa"];
- sleep 0.2;
- ctrlSetText [1200, "pictures\image2.paa"];
-sleep 0.2;
- ctrlSetText [1200, "pictures\image3.paa"];
-sleep 0.2;
- ctrlSetText [1200, "pictures\image4.paa"];
- sleep 0.2;
- ctrlSetText [1200, "pictures\image5.paa"];
- sleep 0.2;
- ctrlSetText [1200, "pictures\image6.paa"];
-sleep 0.2;
- ctrlSetText [1200, "pictures\image7.paa"];
- sleep 0.2;
- ctrlSetText [1200, "pictures\image8.paa"];   
-};
-fnc_random_reel2 = {
-//reel2
- ctrlSetText [1201, "pictures\image1.paa"];
- sleep 0.2;
- ctrlSetText [1201, "pictures\image2.paa"];
-sleep 0.2;
- ctrlSetText [1201, "pictures\image3.paa"];
-sleep 0.2;
- ctrlSetText [1201, "pictures\image4.paa"];
- sleep 0.2;
- ctrlSetText [1201, "pictures\image5.paa"];
- sleep 0.2;
- ctrlSetText [1201, "pictures\image6.paa"];
-sleep 0.2;
- ctrlSetText [1201, "pictures\image7.paa"];
- sleep 0.2;
- ctrlSetText [1201, "pictures\image8.paa"]; 
-};
-fnc_random_reel3 = { 
-//reel3
- ctrlSetText [1202, "pictures\image1.paa"];
- sleep 0.2;
- ctrlSetText [1202, "pictures\image2.paa"];
-sleep 0.2;
- ctrlSetText [1202, "pictures\image3.paa"];
-sleep 0.2;
- ctrlSetText [1202, "pictures\image4.paa"];
- sleep 0.2;
- ctrlSetText [1202, "pictures\image5.paa"];
- sleep 0.2;
- ctrlSetText [1202, "pictures\image6.paa"];
-sleep 0.2;
- ctrlSetText [1202, "pictures\image7.paa"];
- sleep 0.2;
- ctrlSetText [1202, "pictures\image8.paa"];  
+//loop thru random images on reels
+	_counter = 0;
+	while {_counter < 15} do
+	{
+	ReelImage1 = slotspictures call BIS_fnc_selectRandom;
+	ReelImage2 = slotspictures call BIS_fnc_selectRandom;
+	ReelImage3 = slotspictures call BIS_fnc_selectRandom;
+	ctrlSetText[1200, format ["%1" ,ReelImage1]];
+	ctrlSetText[1201, format ["%1" ,ReelImage2]];
+	ctrlSetText[1202, format ["%1" ,ReelImage3]];
+	sleep 0.01;
+		_counter = _counter + 1;
+	};
 };
 
 fnc_spin  = {
-   call fnc_check_credits;
-   sleep 0.01;
-   if (hasCredits) then {
-     //remove credit
-     _credits = _credits - 1;
-     //update credits display     
-     ctrlSetText[1000, format ["%1" ,_credits]];
-     //randomise reels
-     call fnc_random_pictures;
-     //wait 5 seconds
-     sleep 5;
-     _reel1 = _reelArray call BIS_fnc_selectRandom;
-     _reel2 = _reelArray call BIS_fnc_selectRandom;
-     _reel3 = _reelArray call BIS_fnc_selectRandom;
-     //display pictures
-     call fnc_display_pictures;
-     //wait
-     sleep 0.2;
-     //check if win or lose
-     call fnc_payout;
-   };
+	if(IsSpinning)then{
+		titleText ["Please wait for current spin!","PLAIN DOWN"]; titleFadeOut 3;
+	 } else {
+	   if (SlotsPlayerCredits <= 0) then {
+		 hasSlotsCredits = false;
+		 titleText ["You have no credits!","PLAIN DOWN"]; titleFadeOut 3;
+	   }else{
+		 hasSlotsCredits = true;
+	   };
+	   
+	   if (hasSlotsCredits) then {
+		 IsSpinning = true;
+		 //remove credit
+		 SlotsPlayerCredits = SlotsPlayerCredits - 1;
+		 //update credits display     
+		 ctrlSetText[1001, format ["%1" ,SlotsPlayerCredits]];
+		 //randomise reels
+		 call fnc_random_pictures;
+		 //WIN CHANCE
+		 SlotsWinChance = random 100;
+		 
+		 if(SlotsWinChance > 90) then{
+			reel1 = reelArray call BIS_fnc_selectRandom;
+			reel2 = reel1;
+			reel3 = reel1;
+		 }else{
+			reel1 = reelArray call BIS_fnc_selectRandom;
+			reel2 = reelArray call BIS_fnc_selectRandom;
+			reel3 = reelArray call BIS_fnc_selectRandom;
+		 };
+		 sleep 0.1;
+		 //display pictures
+		 call fnc_display_pictures;
+		 //check if win or lose
+		 call fnc_payout;
+	   };
+	};
 };
 fnc_display_pictures = {
 //reel 1
-   if (_reel1 = "cherry") then {
+   if (reel1 == "cherry") then {
     ctrlSetText [1200, "pictures\image1.paa"];
    };
-   if (_reel1 = "lemon") then {
+   if (reel1 == "lemon") then {
     ctrlSetText [1200, "pictures\image2.paa"];
    };
-   if (_reel1 = "grape") then {
+   if (reel1 == "grape") then {
     ctrlSetText [1200, "pictures\image3.paa"];
    };
-   if (_reel1 == "watermelon") then {
+   if (reel1 == "watermelon") then {
     ctrlSetText [1200, "pictures\image4.paa"];
    };
-   if (_reel1 = "orange") then {
+   if (reel1 == "orange") then {
     ctrlSetText [1200, "pictures\image5.paa"];
    };
-   if (_reel1 = "bar") then {
+   if (reel1 == "bar") then {
     ctrlSetText [1200, "pictures\image6.paa"];
    };
-   if (_reel1 = "seven") then {
+   if (reel1 == "seven") then {
     ctrlSetText [1200, "pictures\image7.paa"];
    };
-   if (_reel1 = "diamond") then {
+   if (reel1 == "diamond") then {
     ctrlSetText [1200, "pictures\image8.paa"];
    };
    //reel 2
-   if (_reel2 = "cherry") then {
+   if (reel2 == "cherry") then {
     ctrlSetText [1201,"pictures\image1.paa"];
    };
-   if (_reel2 = "lemon") then {
+   if (reel2 == "lemon") then {
     ctrlSetText [1201,"pictures\image2.paa"];
    };
-   if (_reel2 = "grape") then {
+   if (reel2 == "grape") then {
     ctrlSetText [1201,"pictures\image3.paa"];
    };
-   if (_reel2 = "watermelon") then {
+   if (reel2 == "watermelon") then {
     ctrlSetText [1201,"pictures\image4.paa"];
    };
-   if (_reel2 = "orange") then {
+   if (reel2 == "orange") then {
     ctrlSetText [1201,"pictures\image5.paa"];
    };
-   if (_reel2 = "bar") then {
+   if (reel2 == "bar") then {
     ctrlSetText [1201,"pictures\image6.paa"];
    };
-   if (_reel2 = "seven") then {
+   if (reel2 == "seven") then {
     ctrlSetText [1201,"pictures\image7.paa"];
    };
-   if (_reel2 = "diamond") then {
+   if (reel2 == "diamond") then {
     ctrlSetText [1201,"pictures\image8.paa"];
    };
    //reel 3
-   if (_reel3 = "cherry") then {
+   if (reel3 == "cherry") then {
     ctrlSetText [1202,"pictures\image1.paa"];
    };
-   if (_reel3 = "lemon") then {
+   if (reel3 == "lemon") then {
     ctrlSetText [1202,"pictures\image2.paa"];
    };
-   if (_reel3 = "grape") then {
+   if (reel3 == "grape") then {
     ctrlSetText [1202,"pictures\image3.paa"];
    };
-   if (_reel3 = "watermelon") then {
+   if (reel3 == "watermelon") then {
     ctrlSetText [1202,"pictures\image4.paa"];
    };
-   if (_reel3 = "orange") then {
+   if (reel3 == "orange") then {
     ctrlSetText [1202,"pictures\image5.paa"];
    };
-   if (_reel3 = "bar") then {
+   if (reel3 == "bar") then {
     ctrlSetText [1202,"pictures\image6.paa"];
    };
-   if (_reel3 = "seven") then {
+   if (reel3 == "seven") then {
     ctrlSetText [1202,"pictures\image7.paa"];
    };
-   if (_reel3 = "diamond") then {
+   if (reel3 == "diamond") then {
     ctrlSetText [1202,"pictures\image8.paa"];
    };
 };
 
 fnc_payout = {
-   if ((_reel1 = _reel2) && (_reel2 = _reel3)) then {
-     if (_reel1 = "cherry") then {
+	//slotsprizes for payout
+	slotsprize1 = "ItemGoldBar";
+	slotsprize2 = "ItemGoldBar10oz";
+	slotsprize3 = "ItemBriefcase20oz";
+	slotsprize4 = "ItemBriefcase40oz";
+	slotsprize5 = "ItemBriefcase60oz";
+	slotsprize6 = "ItemBriefcase80oz";
+	slotsprize7 = "ItemBriefcase100oz";
+   if ((reel1 == reel2) && (reel2 == reel3)) then {
+     if (reel1 == "cherry") then {
        titleText ["You won 1 gold bar!","PLAIN DOWN"]; titleFadeOut 3;
-       player addMagazine _prize1;
+       player addMagazine slotsprize1;
      };
-     if (_reel1 = "lemon") then {
+     if (reel1 == "lemon") then {
        titleText ["You won 10oz gold!","PLAIN DOWN"]; titleFadeOut 3;
-       player addMagazine _prize2;
+       player addMagazine slotsprize2;
      };
-     if (_reel1 = "grape") then {
+     if (reel1 == "grape") then {
        titleText ["You won 20oz gold!","PLAIN DOWN"]; titleFadeOut 3;
-       player addMagazine _prize3;
+       player addMagazine slotsprize3;
      };
-     if (_reel1 = "watermelon") then {
+     if (reel1 == "watermelon") then {
        titleText ["You won 40oz gold!","PLAIN DOWN"]; titleFadeOut 3;
-       player addMagazine _prize4;
+       player addMagazine slotsprize4;
      };
-     if (_reel1 = "orange") then {
+     if (reel1 == "orange") then {
        titleText ["You won 60oz gold!","PLAIN DOWN"]; titleFadeOut 3;
-       player addMagazine _prize5;
+       player addMagazine slotsprize5;
      };
-     if (_reel1 = "bar") then {
+     if (reel1 == "bar") then {
        titleText ["You won 80oz gold!","PLAIN DOWN"]; titleFadeOut 3;
-       player addMagazine _prize6;
+       player addMagazine slotsprize6;
      };
-     if (_reel1 = "seven") then {
+     if (reel1 == "seven") then {
        titleText ["Jackpot! You won 100oz gold!","PLAIN DOWN"]; titleFadeOut 3;
-       player addMagazine _prize7;
+       player addMagazine slotsprize7;
      };
-     if (_reel1 = "diamond") then {
-       _credits = _credits + 5;
-       titleText ["You won 5 free credits!","PLAIN DOWN"]; titleFadeOut 3;
+     if (reel1 == "diamond") then {
+       SlotsPlayerCredits = SlotsPlayerCredits + 10;
+       titleText ["You won 10 free credits!","PLAIN DOWN"]; titleFadeOut 3;
      };
    }else{
      titleText ["You lost.","PLAIN DOWN"]; titleFadeOut 3;
    };
+   IsSpinning = false;
+};
+
+fnc_reset_slots = {
+	SlotsPlayerCredits = 0;
+	IsSpinning = false;
+};
+
+fnc_cash_out = {
+	if (IsSpinning) then {
+		titleText ["Please wait for current spin!","PLAIN DOWN"]; titleFadeOut 3;
+	}else{
+		if (SlotsPlayerCredits > 0) then {
+			while {SlotsPlayerCredits > 0} do
+			{
+				if (SlotsPlayerCredits > 10) then {
+					player addMagazine slotsprize2;
+					SlotsPlayerCredits = SlotsPlayerCredits - 10;
+				}else{
+					player addMagazine slotsprize1;
+					SlotsPlayerCredits = SlotsPlayerCredits - 1;
+				};
+			};
+			titleText ["Credits refunded.","PLAIN DOWN"]; titleFadeOut 3;
+			sleep 0.01;
+			call fnc_reset_slots;
+		};
+	};
 };
