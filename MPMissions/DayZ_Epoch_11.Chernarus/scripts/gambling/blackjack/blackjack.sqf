@@ -15,18 +15,41 @@ cardArray = [
 
 dealerCard1 = [];
 dealerCard2 = [];
+dealerCard3 = [];
+dealerCard4 = [];
+dealerCard5 = [];
+dealerCard6 = [];
+
 playerCard1 = [];
 playerCard2 = [];
+playerCard3 = [];
+playerCard4 = [];
+playerCard5 = [];
+playerCard6 = [];
+
+
 dealerCard1val = 0;
 dealerCard2val = 0;
+dealerCard3val = 0;
+dealerCard4val = 0;
+dealerCard5val = 0;
+dealerCard6val = 0;
+
 playerCard1val = 0;
 playerCard2val = 0;
+playerCard3val = 0;
+playerCard4val = 0;
+playerCard5val = 0;
+playerCard6val = 0;
+
+
 aces1 = false;
-HasAce = false;	
+blackjackBet = "";
+
+	
 //check if player has any Aces
 fnc_checkAces = {
-	if (playerCard1 == "AH") ||(playerCard1 == "AD") ||(playerCard1 == "AS") ||(playerCard1 == "AC") ||(playerCard2 == "AH") ||(playerCard2 == "AD") ||(playerCard2 == "AS") ||(playerCard2 == "AC") then {
-		HasAce = true;
+	if (playerCard1 == "AH") ||(playerCard1 == "AD") ||(playerCard1 == "AS") ||(playerCard1 == "AC") ||(playerCard2 == "AH") ||(playerCard2 == "AD") ||(playerCard2 == "AS") ||(playerCard2 == "AC") ||(playerCard3 == "AH") ||(playerCard3 == "AD") ||(playerCard3 == "AS") ||(playerCard3 == "AC")||(playerCard4 == "AH") ||(playerCard4 == "AD") ||(playerCard4 == "AS") ||(playerCard4 == "AC")||(playerCard5 == "AH") ||(playerCard5 == "AD") ||(playerCard5 == "AS") ||(playerCard5 == "AC")||(playerCard6 == "AH") ||(playerCard6 == "AD") ||(playerCard6 == "AS") ||(playerCard6 == "AC")then {
 		//show aces choice dialog		
 	};
 };
@@ -39,31 +62,58 @@ fnc_ace11 = {
 	aces1 = false;
 };
 
+fnc_hit_stay = {
+
+//Hit
+
+//Stay
+	if (dealerTotal < 16) then {
+		dealerCard3 = cardArray call BIS_fnc_selectRandom;
+		dealerTotal = dealerTotal + dealerCard3val
+	}else{
+		call fnc_WinLose;
+	};
+};
 //Deal cards
 fnc_deal_cards = {
 	dealerCard1 = cardArray call BIS_fnc_selectRandom;
+	ctrlSetText[1001, format ["%1" ,dealerCard1]];
 	call fnc_remove_card;
 	dealerCard2 = cardArray call BIS_fnc_selectRandom;
+	ctrlSetText[1002, format ["%1" ,dealerCard2]];
 	call fnc_remove_card;
 	playerCard1 = cardArray call BIS_fnc_selectRandom;
+	ctrlSetText[1003, format ["%1" ,playerCard1]];
 	call fnc_remove_card;
 	playerCard2 = cardArray call BIS_fnc_selectRandom;
+	ctrlSetText[1004, format ["%1" ,playerCard2]];
 	call fnc_remove_card;
 	//Check for aces in players hand
 	call fnc_checkAces;
 	call fnc_check_totals;
-	call fnc_WinLose;
+	call fnc_hit_stay;
 };
+//lose
+fnc_playerLose = {
+	call fnc_reset_cards;
+	titleText ["You lost!","PLAIN DOWN"]; titleFadeOut 3;
+};
+//Win
+fnc_playerWin = {
+	call fnc_reset_cards;
+	titleText ["You Won!","PLAIN DOWN"]; titleFadeOut 3;
+};
+//check if win or lose
 fnc_WinLose = {
-	if (dealerToatl == 21) then {
+	if (dealerTotal < playerTotal)then {
 		call fnc_playerLose;
 	};
-	if (dealerToatl > 21) then {
-
+	if (dealerTotal > playerTotal)then {
+		call fnc_playerWin;
 	};
 };
 //remove cards from array
-fnc_remove_cards = {
+fnc_remove_card = {
 	cardArray = cardArray - dealerCard1;
 	cardArray = cardArray - dealerCard2;
 	cardArray = cardArray - playerCard1;
@@ -71,8 +121,15 @@ fnc_remove_cards = {
 };
 //Check totals
 fnc_check_totals = {
-	dealerToatl = dealerCard1val + dealerCard2val;
-	playerToatl = playerCard1val + playerCard2val;
+	dealerTotal = dealerCard1val + dealerCard2val ;
+	playerTotal = playerCard1val + playerCard2val;
+	//check if dealer has 21
+	if (dealerTotal == 21) then {
+		call fnc_playerLose;
+	};
+	if (dealerTotal < 21) && (playerTotal == 21)then {
+		call fnc_playerWin;
+	};
 };
 
 fnc_check_card_values = {
@@ -138,7 +195,7 @@ fnc_check_card_values = {
 	if (dealerCard2 == "2H") ||(dealerCard2 == "2D") ||(dealerCard2 == "2S") ||(dealerCard2 == "2C") then {
 		dealerCard2val = 2;
 	};
-	
+	//player card 1
 	if (playerCard1 == "AH") ||(playerCard1 == "AD") ||(playerCard1 == "AS") ||(playerCard1 == "AC") then {
 		if (aces1)then{
 			playerCard1val = 1;
@@ -173,7 +230,7 @@ fnc_check_card_values = {
 	if (playerCard1 == "2H") ||(playerCard1 == "2D") ||(playerCard1 == "2S") ||(playerCard1 == "2C") then {
 		playerCard1val = 2;
 	};
-	
+	//player card 2
 	if (playerCard2 == "AH") ||(playerCard2 == "AD") ||(playerCard2 == "AS") ||(playerCard2 == "AC") then {
 		if (aces1)then{
 			playerCard1val = 1;

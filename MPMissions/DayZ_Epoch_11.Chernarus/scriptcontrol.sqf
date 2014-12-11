@@ -4,6 +4,8 @@
 //Server watermark
 WaterMarkScript = true; //Watermark on/off
 server_name = "0.15"; //Watermark Text
+//Gambling ( Slotmachine, Guessing Game)
+GambleingScript = true;
 //Intro Music
 IntroMusicScript = true;
 //Server Logo
@@ -224,4 +226,4 @@ sectorfngMarker = false;
 // DO NOT CHANGE THIS!!
 //Repack version 
 REPACKMOD = "Overpoch"; 
-BUILDNUMBER = "106";
+BUILDNUMBER = "109";

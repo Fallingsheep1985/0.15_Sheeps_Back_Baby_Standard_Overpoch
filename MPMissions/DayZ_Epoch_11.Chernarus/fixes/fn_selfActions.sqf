@@ -1406,13 +1406,20 @@ if(ZombieBombScript)then{
 };
 //Gambleing
 
+//Gambleing
+if(GambleingScript) then {
 //Random number game
 	if (cursorTarget isKindOf "Hooker4") then {
 		if (s_player_gamble < 0) then {
-            s_player_gamble = player addAction [("<t color='#c30000'>")+("Gamble")+("</t>"), "scripts\gambling\gamblemenu.sqf","",5,false,true,"",""];
+            s_player_gamble = player addAction [("<t color='#c30000'>")+("Slots")+("</t>"), "scripts\gambling\slotmachine\slots.sqf","",5,false,true,"",""];
+		};
+		if (s_player_gamble2 < 0) then {
+            s_player_gamble2 = player addAction [("<t color='#c30000'>")+("Guessing Game")+("</t>"), "scripts\gambling\guessinggame\\guess.sqf","",5,false,true,"",""];
 		};
 	}else {
 	    player removeAction s_player_gamble;
 		s_player_gamble = -1;
+		player removeAction s_player_gamble2;
+		s_player_gamble2 = -1;
 	};
-	
+};
