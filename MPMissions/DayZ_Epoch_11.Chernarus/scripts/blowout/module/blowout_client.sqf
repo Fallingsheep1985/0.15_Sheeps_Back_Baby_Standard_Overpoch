@@ -73,6 +73,9 @@ bl_local_check_time =
 
 bl_local_anims = 
 {
+//undefined fix
+	_jednotka = 0;
+	
     _count_units = count AllUnits;
     for [{_c = 0}, {_c <= _count_units}, {_c = _c + 1}] do 
     {
@@ -89,6 +92,8 @@ bl_local_anims =
 
 bl_local_def_anim = 
 {
+//undefined fix
+	_jednotka = 0;
     _count_units = count AllUnits;
     for [{_c = 0}, {_c <= _count_units}, {_c = _c + 1}] do 
     {
@@ -349,7 +354,7 @@ while {true} do {
 	};
 
 	_bul = [] spawn bl_preparations;
-
+	if (isNil("ns_blow_status")) then { ns_blow_status = false; };
 	waitUntil{ns_blow_status};
 
 	diag_log format["[NAC BLOWOUT CLIENT] :: ns_blow_status = %1 Blowout confirmation received.", ns_blow_status];
