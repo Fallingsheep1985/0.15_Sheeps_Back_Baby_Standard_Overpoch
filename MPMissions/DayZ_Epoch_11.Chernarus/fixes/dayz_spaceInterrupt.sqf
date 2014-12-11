@@ -3,6 +3,12 @@ _dikCode = 	_this select 1;
 GlobalPreviewVariable = 1;
 _handled = false;
 
+if ((animationState player) in ["smk_urbanproneright","smk_prone_to_urbanprone_right","smk_urbanproneleft","smk_prone_to_urbanprone_left"]) then {
+	player switchMove "";
+	player playActionNow "Down";
+	cutText ["\n\nUrban prone stances have been disabled.", "PLAIN DOWN"];
+};
+
 if (_dikCode in[0x02,0x03,0x04,0x58,0x57,0x44,0x43,0x42,0x41,0x40,0x3F,0x3E,0x3D,0x3C,0x3B,0x0B,0x0A,0x09,0x08,0x07,0x06,0x05]) then {
 	_handled = true;
 };
