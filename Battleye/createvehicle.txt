@@ -30,7 +30,7 @@
 5 "_SMAW"
 5 "_GRAD"
 5 "_SABOT" !="arma1_us_soldier_sabot" !="frb_stealth_sabot" !="Navy_SEAL_Sabot" !="Winter_SOF_Sabot" !="Desert_SOF_Sabot"
-5 "_SH" !="Wooden_shed_DZ" !="Land_Ind_Shed_01_main"
+5 "_SH" !="Wooden_shed_DZ" !="Land_Ind_Shed_01_main" !="Desert_SOF_Shotgun" !="Navy_SEAL_Shotgun"
 5 "KORD"
 5 "DSHKM"
 5 "MK19"
@@ -38,7 +38,7 @@
 1 "Nest_" !="M240Nest_DZ" !="SandNest_DZ" !="Land_fortified_nest_smallPreview" !="Land_fortified_nest_big" !="Land_fortified_nest_small"
 5 "R_PG"
 5 "R_OG"
-5 "B_" !="Land_CamoNetB_EAST" !="Land_CamoNetB_NATO" !="frb_tl" !="frb_tl_mask" !="frb_gl" !="frb_gl_mask" !="frb_mg" !="frb_mg_mask" !="frb_mark" !="frb_mark_mask" !="frb_stealth_tl" !="frb_stealth_rifleman" !="frb_stealth_sabot" !="frb_stealth_mark"
+5 "B_" !="Land_CamoNetB_EAST" !="MAP_P_toilet_b_02" !="Land_CamoNetB_NATO" !="frb_tl" !="frb_tl_mask" !="frb_gl" !="frb_gl_mask" !="frb_mg" !="frb_mg_mask" !="frb_mark" !="frb_mark_mask" !="frb_stealth_tl" !="frb_stealth_rifleman" !="frb_stealth_sabot" !="frb_stealth_mark"
 5 "_YakB"
 1 "_ball" 
 1 "_mk"
@@ -47,8 +47,8 @@
 1 "M_" !="G_40mm_HE" //!="40mm_" //keep monitoring to catch obvious abuse
 1 "Parachute" !="ParachuteWest" !="ParachuteC" //under monitoring
 1 "dog" //until released not welcome
-1 "Land_" !="Land_Fire_DZ" !="Land_Bucket_EP1" !="Land_HBarrier1_DZ" !="Land_HBarrier1Preview" !="Land_HBarrier3_DZ" !="Land_HBarrier3ePreview" !="Land_HBarrier5_DZ" !="Land_HBarrier5Preview" !="Land_fortified_nest_smallPreview" !="Land_DZE_WoodDoor" !="Land_DZE_LargeWoodDoor" !="Land_DZE_GarageWoodDoor" !="Land_DZE_WoodDoorLocked" !="Land_DZE_LargeWoodDoorLocked" !="Land_DZE_GarageWoodDoorLocked" !"Land_fortified_nest_big" !"Land_Fort_Watchtower" !"Land_fort_rampart_EP1" !"Land_HBarrier_large" !"Land_fortified_nest_small" !"Land_BagFenceRound" !"Land_fort_bagfence_long" !"Land_Misc_Cargo2E" !"Land_pumpa" !"Land_CncBlock" !"Land_prebehlavka" !"Land_tent_east" !"Land_CamoNetB_EAST" !"Land_CamoNetB_NATO" !"Land_CamoNetVar_EAST" !"Land_CamoNetVar_NATO" !"Land_CamoNet_EAST" !"Land_CamoNet_NATO" !"Land_sara_hasic_zbroj" !"Land_Shed_wooden" !"Land_Barrack2" !"Land_vez" !"Land_Ind_Shed_01_main" !"Land_Fire_barrel" !"Land_WoodenRamp" !"Land_Ind_TankSmall2_EP1" !"Land_Ind_IlluminantTower" !"Land_A_Castle_Stairs_A" !"Land_A_Castle_Gate" !"Land_House_L_1_EP1" !"Land_ConcreteRamp" !"Land_Campfire" !"Land_ladder" !"Land_ladder_half" !"Land_Misc_Scaffolding"
-5 "BBarracks"
+1 "Land_" !="Land_Fire_DZ" !="Land_Market_shelter_EP1" !="Land_Bucket_EP1" !="Land_Shed_W4" !="Land_HBarrier1_DZ" !="Land_HBarrier1Preview" !="Land_HBarrier3_DZ" !="Land_HBarrier3ePreview" !="Land_HBarrier5_DZ" !="Land_HBarrier5Preview" !="Land_fortified_nest_smallPreview" !="Land_DZE_WoodDoor" !="Land_DZE_LargeWoodDoor" !="Land_DZE_GarageWoodDoor" !="Land_DZE_WoodDoorLocked" !="Land_DZE_LargeWoodDoorLocked" !="Land_DZE_GarageWoodDoorLocked" !"Land_fortified_nest_big" !"Land_Fort_Watchtower" !"Land_fort_rampart_EP1" !"Land_HBarrier_large" !"Land_fortified_nest_small" !"Land_BagFenceRound" !"Land_fort_bagfence_long" !"Land_Misc_Cargo2E" !"Land_pumpa" !"Land_CncBlock" !"Land_prebehlavka" !"Land_tent_east" !"Land_CamoNetB_EAST" !"Land_CamoNetB_NATO" !"Land_CamoNetVar_EAST" !"Land_CamoNetVar_NATO" !"Land_CamoNet_EAST" !"Land_CamoNet_NATO" !"Land_sara_hasic_zbroj" !"Land_Shed_wooden" !"Land_Barrack2" !"Land_vez" !"Land_Ind_Shed_01_main" !"Land_Fire_barrel" !"Land_WoodenRamp" !"Land_Ind_TankSmall2_EP1" !"Land_Ind_IlluminantTower" !"Land_A_Castle_Stairs_A" !"Land_A_Castle_Gate" !"Land_House_L_1_EP1" !"Land_ConcreteRamp" !"Land_Campfire" !"Land_ladder" !"Land_ladder_half" !"Land_Misc_Scaffolding"
+5 "BBarracks" !="TK_WarfareBBarracks_Base_EP1" !="USMC_WarfareBBarracks"
 1 "_ep1" !="DZ_Patrol_Pack_EP1" !="DZ_CivilBackpack_EP1" !="CZ_VestPouch_EP1" !="DZ_ALICE_Pack_EP1" !="DZ_Backpack_EP1" !="DZ_Assault_Pack_EP1" !="DZ_TK_Assault_Pack_EP1" !="GER_Soldier_TL_EP1" !="TK_INS_Soldier_EP1_DZ" !="TK_Commander_EP1" !="TK_Soldier_Crew_EP1" !="TK_Soldier_MG_EP1" !="TK_Special_Forces_MG_EP1" !="TK_INS_Bonesetter_EP1" !="CZ_Soldier_Sniper_EP1_DZ" !="US_Delta_Force_TL_EP1" !="US_Delta_Force_EP1" !="US_Delta_Force_AR_EP1" !="US_Delta_Force_Medic_EP1" !="US_Delta_Force_Marksman_EP1" !="US_Delta_Force_Air_Controller_EP1" !="TK_INS_Warlord_EP1_DZ"
 1 "_baf"
 1 "_pmc"
