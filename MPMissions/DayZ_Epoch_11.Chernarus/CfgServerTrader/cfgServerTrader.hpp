@@ -88,7 +88,7 @@ class CfgTraderCategory {
 	#include "Category\Misc.hpp"
 	#include "Category\FoodNuts.hpp"
 	#include "Category\Clothing.hpp"
-	
+	#include "Category\OilBarrel.hpp"
 	
 	#include "Category\Overwatch416.hpp"
 	#include "Category\Overwatch417.hpp"
