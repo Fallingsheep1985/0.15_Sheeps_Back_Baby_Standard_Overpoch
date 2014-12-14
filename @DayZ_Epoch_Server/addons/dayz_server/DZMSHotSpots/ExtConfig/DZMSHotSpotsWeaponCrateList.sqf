@@ -4,7 +4,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // Pistols
-DZMSHotSpotspistolList = ["M9","M9SD","Makarov","MakarovSD","COLT1911","SA61_EP1","UZI_EP1","UZI_SD_EP1","REVOLVER_EP1","REVOLVER_GOLD_EP1","GLOCK17_EP1"];
+DZMSHotSpotspistolList = ["Makarov","Colt1911","revolver_EP1","revolver_gold_EP1","M9","M9SD","MakarovSD","UZI_EP1","UZI_SD_EP1","glock17_EP1","Sa61_EP1","RH_anac","RH_anacg","RH_bull","RH_g17","RH_g17sd","RH_g18","RH_g19","RH_g19t","RH_deagle","RH_Deagleg","RH_Deagles","RH_Deaglem","RH_Deaglemz","RH_Deaglemzb","RH_m1911","RH_m1911sd","RH_m1911old","RH_m9","RH_m9sd","RH_m9c","RH_m9csd","RH_mk22","RH_mk22sd","RH_mk22v","RH_mk22vsd","RH_mk2","RH_muzi","RH_python","RH_browninghp","RH_p226","RH_p226s","RH_p38","RH_ppk","RH_usp","RH_usp","RH_uspsd","RH_uspm","RH_tt33","RH_vz61","RH_tec9","vil_USP","vil_USPSD","vil_USP45","vil_USP45SD","vil_APS","vil_apssd","Vil_PYA"];
 
 // Sniper Rifles
 DZMSHotSpotssniperList = ["M24","M40A3","SVD","SVD_CAMO","HUNTINGRIFLE","DMR_DZ","M24_DES_EP1","SVD_DES_EP1","M110_NVG_EP1","SCAR_H_LNG_SNIPER","SCAR_H_LNG_SNIPER_SD"];
