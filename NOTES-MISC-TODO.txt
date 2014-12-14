@@ -1,20 +1,10 @@
 
-BUGS
-WAI - overwatch weapons to arrays
-
-
-ENHANCEMENTS (may not make it in final release!)
-fishing area for fishing boat
-fish trader
-nuke event
-neon lights (add in)
-dancing hookers(ProjectX)
-Re do loot for Casino killhouse
-add survivor recruit info to readme
-(how to change spawn amount, etc)
-add more zombie hordes (not happening FPS drop is to much!)
-Ai spawns at custom areas (new areas)
-slot machine (do display base code should be good to go)
-black jack
-poker (maybe)
-craps (maybe)
+BUGS/TEST/TODO
+trade from vehicle - test new version
+overwatch clothes - add to BE filters 
+random hemp fields - need to reduce amount
+Gambling trader - test
+overwatch weapons added DZMS, WAI, DZMSHotspots - test
+overwatch cars WAI - test
+multiple death messages - test
+Oil Barrels wholesale traders - test 
