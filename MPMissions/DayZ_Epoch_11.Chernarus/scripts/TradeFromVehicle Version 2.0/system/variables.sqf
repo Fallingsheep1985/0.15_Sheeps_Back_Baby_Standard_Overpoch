@@ -35,9 +35,9 @@ TFV_VEHICLE_MENU =
 [
     ["",false],
 	["Trading From Vehicle",[0],"",-5,[["expression",""]],"1","0"],
-	["Trade Weapons",[0],"",-5,[["expression","['vehicle','weapons'] ExecVM 'TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
-	["Trade Magazines",[0],"",-5,[["expression","['vehicle','magazines'] ExecVM 'TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
-	["Trade All Items",[0],"",-5,[["expression","['vehicle','all'] ExecVM 'TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
+	["Trade Weapons",[0],"",-5,[["expression","['vehicle','weapons'] ExecVM 'scripts\TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
+	["Trade Magazines",[0],"",-5,[["expression","['vehicle','magazines'] ExecVM 'scripts\TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
+	["Trade All Items",[0],"",-5,[["expression","['vehicle','all'] ExecVM 'scripts\TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
 	["",[0],"",-5,[["expression",""]],"1","0"],
 	["Exit",[0],"",-5,[["expression",""]],"1","1"]
 ];
@@ -46,9 +46,9 @@ TFV_BACKPACK_MENU =
 [
     ["",false],
 	["Trading From Backpack",[0],"",-5,[["expression",""]],"1","0"],
-	["Trade Weapons",[0],"",-5,[["expression","['backpack','weapons'] ExecVM 'TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
-	["Trade Magazines",[0],"",-5,[["expression","['backpack','magazines'] ExecVM 'TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
-	["Trade All Items",[0],"",-5,[["expression","['backpack','all'] ExecVM 'TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
+	["Trade Weapons",[0],"",-5,[["expression","['backpack','weapons'] ExecVM 'scripts\TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
+	["Trade Magazines",[0],"",-5,[["expression","['backpack','magazines'] ExecVM 'scripts\TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
+	["Trade All Items",[0],"",-5,[["expression","['backpack','all'] ExecVM 'scripts\TradeFromVehicle Version 2.0\system\trade.sqf'"]],"1","1"],
 	["",[0],"",-5,[["expression",""]],"1","0"],
 	["Exit",[0],"",-5,[["expression",""]],"1","1"]
 ];

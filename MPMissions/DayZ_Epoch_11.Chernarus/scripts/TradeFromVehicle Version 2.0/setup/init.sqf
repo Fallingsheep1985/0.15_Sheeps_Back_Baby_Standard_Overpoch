@@ -11,7 +11,7 @@ TFV_ACC =  false;   // Allow combining currency? This attempts to sort the playe
 TFV_WIPS =    5;   // *How many weapons can be sold per stage of trading? Each stage of trading is the length of time to perform the standard trading animation.
 TFV_MIPS =    8;   // *How many magazines can be sold per stage of trading?
 TFV_ATIS = true;   // Allow toolbelt items to be sold? Toolbelt items are classed as weapons and will be sold without warning when weapons are sold. Keys will ALWAYS be safe.
-TFV_COINS = true;  //Coins System
+TFV_COINS = false;  //Coins System
 TFV_DEBUG = false;  //Debug
 
 
@@ -24,9 +24,9 @@ TFV_TAXFBT= "15"; // Dispay Tax Backpack (lazy code TBH)
 
 // * When using the "Trade All Items" action, it uses the average of TFV_MIPS and TFV_WIPS to calculate the required amount of stages.
 
-call compile preprocessFileLineNumbers "TradeFromVehicle Version 2.0\system\functions.sqf";
-call compile preprocessFileLineNumbers "TradeFromVehicle Version 2.0\system\variables.sqf";
+call compile preprocessFileLineNumbers "scripts\TradeFromVehicle Version 2.0\system\functions.sqf";
+call compile preprocessFileLineNumbers "scripts\TradeFromVehicle Version 2.0\system\variables.sqf";
 
 sleep 0.5;
 
-ExecVM "TradeFromVehicle Version 2.0\monitor.sqf";
+ExecVM "scripts\TradeFromVehicle Version 2.0\monitor.sqf";
